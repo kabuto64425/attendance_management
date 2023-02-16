@@ -7,3 +7,4 @@ gunicorn==20.1.0
 pytz==2018.5
 whitenoise==6.0.0
 django-environ==0.9.0
+dj-static==0.0.6
