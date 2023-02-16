@@ -1,5 +1,7 @@
 from django.urls import path
 
+from django.contrib import admin
+
 from .models import Item
 from .views import ItemFilterView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView, MainFormView, MonthCalendar, LoginView, LogoutView, AboutView
 
