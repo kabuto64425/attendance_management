@@ -11,5 +11,6 @@ urlpatterns = [
     path('month/<int:year>/<int:month>/', MonthCalendar.as_view(), name='month'),
     path("login", LoginView.as_view(), name='login'),
     path("logout", LogoutView.as_view(), name='logout'),
-    path("about", AboutView.as_view(), name='about')
+    path("about", AboutView.as_view(), name='about'),
+    path("admin/", admin.site.urls)
 ]
