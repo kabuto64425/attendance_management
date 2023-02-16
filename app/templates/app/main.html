@@ -1,0 +1,35 @@
+{% extends "./_base.html" %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% if messages %}
+                <ul class="list-unstyled">
+                  {% for message in messages %}
+                  <li class="{{ message.tags }}">{{ message }}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+                <form method="post" action="{% url 'main' %}" class="form-group">
+                    {% csrf_token %}
+                    <button type='submit' class="btn btn-outline-dark delete" name="attend" value="attend">出勤</button>
+                    <button type='submit' class="btn btn-outline-dark delete" name="leave" value='leave'>退勤</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <span>{{today | date:"Y年m月d日"}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <span>出勤:</span><span>{{attend| date:"H:i"}}</span>
+            </div>
+            <div class="col-4">
+                <span>退勤:</span><span>{{leave| date:"H:i"}}</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

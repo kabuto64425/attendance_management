@@ -1,0 +1,42 @@
+{% extends "./_base.html" %}
+
+{% block content %}
+    <a href="{% url 'month' month_previous.year month_previous.month %}">前月</a>
+    {{ month_current | date:"Y年m月" }}
+    <a href="{% url 'month' month_next.year month_next.month %}">次月</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            {% for w in week_names %}
+                <th>{{ w }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for week_day_schedles in month_day_schedules %}
+            <tr>
+                {% for day, schedules in week_day_schedles.items %}
+                    {% if now == day %}
+                        <td class="table-success">
+                            {% else %}
+                        <td>
+                    {% endif %}
+                    <ul class="list-unstyled">
+                        <li>
+                            {% if month_current.month != day.month %}
+                                {{ day | date:"m/d" }}
+                            {% else %}
+                                {{ day.day }}
+                            {% endif %}
+                        </li>
+                        <li>出勤:<span>{% if schedules %}{{ schedules.0.stamping | date:"H:i" }}{% endif %}</span></li>
+                        <li>退勤:<span>{% if schedules %}{{ schedules.1.stamping | date:"H:i" }}{% endif %}</span></li>
+                    </ul>
+                </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

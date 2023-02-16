@@ -1,0 +1,51 @@
+{% extends "./_base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>出退勤打刻アプリとは</h2>
+                <ul>
+                    <li>出退勤の時刻を記録することを想定したWEBアプリのデモンストレーションです。</li>
+                    <li>各アカウント毎で各日、「出勤」ボタンを押した最初の時刻と「退勤」ボタンを押した最後の時刻を記録します。</li>
+                    <li>出退勤の過去の記録は「打刻記録」から確認できます。</li>
+                </ul>
+            </div>
+            <div class="col-12">
+                以下のユーザーのいずれかを使用してログインしてください。
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ユーザー名</th>
+                        <th scope="col">パスワード</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>test1</td>
+                        <td>testaccount1</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>test2</td>
+                        <td>testaccount2</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>test3</td>
+                        <td>testaccount3</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>test4</td>
+                        <td>testaccount4</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
