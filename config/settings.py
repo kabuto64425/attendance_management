@@ -207,4 +207,5 @@ SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
 SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
 
 if 'DYNO' in os.environ:
+    print('DYNO')
     django_heroku.settings(locals())
