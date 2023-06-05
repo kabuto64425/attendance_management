@@ -31,7 +31,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 # 本番運用時は別の値に置き換えること。
 # 生成ツール：https://www.miniwebtool.com/django-secret-key-generator/
-SECRET_KEY = '!$i=0r1!y(*a$7z5tvms&nmo86-56pp8pc^x7x36@4iqympff@'
+# SECRET_KEY = '!$i=0r1!y(*a$7z5tvms&nmo86-56pp8pc^x7x36@4iqympff@'
 SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
