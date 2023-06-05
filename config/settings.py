@@ -96,9 +96,9 @@ DATABASES = {
 #print(BASE_DIR)
 #default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
-DATABASES = {
-    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
-}
+#DATABASES = {
+#    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
